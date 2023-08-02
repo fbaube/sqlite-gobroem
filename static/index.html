@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>sqliteweb</title>
+  <title>Sqlite Web</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Language" content="en">
@@ -17,44 +13,41 @@
   <script>const apiRoot = "{{.root}}"</script>
 </head>
 <body>
-   <!--[if lt IE 7]>
-       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-   <![endif]-->
-
   <div id="main">
+
     <div id="navbar">
       <div class="row">
         <div class="col-xs-12 col-sm-12">
           <ul class="nav-main">
-            <li id="table_structure">Structure</li>
+            <li id="table_structure">Schema</li>
             <li id="table_content">Content</li>
             <li id="table_query">SQL Query</li>
           </ul>
         </div>
       </div>
-
     </div>
 
     <div id="sidebar">
+      
       <div class="tabels-list">
         <div class="wrap">
-          <div class="title">Database Tables</div>
+          <div class="title">DB Tables</div>
           <ul id="tables"></ul>
         </div>
       </div>
 
       <div class="information">
         <div class="wrap">
-          <div id="db_information" class="title">Database Information</div>
+          <div id="db_information" class="title">DB Info</div>
           <ul>
-            <li>Filename: <span id="db_file_name"></span></li>
-            <li>Size: <span id="db_size"></span></li>
-            <li>Tables: <span id="db_count_tables"></span></li>
-            <li>Indexes: <span id="db_count_indexes"></span></li>
+            <li>File name: <span id="db_file_name"></span></li>
+            <li>File size: <span id="db_size"></span></li>
+            <li>Table ct: <span id="db_count_tables"></span></li>
+            <li>Index ct: <span id="db_count_indexes"></span></li>
           </ul>
-          <div id="table_information" class="title">Table Information</div>
+          <div id="table_information" class="title">Table Info</div>
           <ul>
-            <li>Rows: <span id="table_count_rows"></span></li>
+            <li>Row ct: <span id="table_count_rows"></span></li>
           </ul>
         </div>
       </div>
@@ -82,7 +75,7 @@
                 <tbody></tbody>
               </table>
             </div>
-            <h3>Indexes</h3>
+            <h3>Indices</h3>
             <div id="structure_indexes">
               <table id="table_indexes" class="table table-striped">
                 <thead>
