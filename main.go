@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"embed"
 	SGB "github.com/fbaube/sqlite-gobroem/gobroem"
 )
 
@@ -15,6 +16,11 @@ var options struct {
 	host string
 	port uint
 }
+
+var (
+    //go:embed static
+    stc embed.FS // an http.FileSystem is not allowed here 
+    )
 
 // printHeader print the welcome header.
 func printHeader() {
