@@ -1,0 +1,4 @@
+github.com/bakaoh/sqlite-gobroem v0.0.0-20181106043831-31f36aba0c2a h1:XPjW4HB3S8jQAfcsM41uH1A4rAoVtwdNyYuuI4JUG2Y=
+github.com/bakaoh/sqlite-gobroem v0.0.0-20181106043831-31f36aba0c2a/go.mod h1:JL8NhsS1SKZiHBgVI4VPzAKOsf110fb0cRId4lzyq6A=
+github.com/mattn/go-sqlite3 v1.14.17 h1:mCRHCLDUBXgpKAqIKsaAaAsrAlbkeomtRFKXh2L6YIM=
+github.com/mattn/go-sqlite3 v1.14.17/go.mod h1:2eHXhiwb8IkHr+BDWZGa96P6+rkvnG63S2DGjv9HUNg=

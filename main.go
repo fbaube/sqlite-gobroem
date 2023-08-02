@@ -5,9 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-
-	"github.com/bakaoh/sqlite-gobroem/gobroem"
+	SGB "github.com/fbaube/sqlite-gobroem/gobroem"
 )
 
 const version = "0.1.0"
@@ -20,24 +18,23 @@ var options struct {
 
 // printHeader print the welcome header.
 func printHeader() {
-	fmt.Fprintf(os.Stdout, "sqlite gobroem, v%s\n", version)
+	println("sqlite-gobroem v." + version)
 }
 
 // initConfig parse CLI config
 func initConfig() {
-	options.db = *flag.String("db", "test/test.db", "SQLite database file")
-	options.host = *flag.String("bind", "localhost", "HTTP server host")
-	options.port = *flag.Uint("listen", 8000, "HTTP server listen port")
+	flag.StringVar(&options.host, "host", "localhost", "HTTP server hostname")
+	flag.StringVar(&options.db, "db", "test/test.db", "SQLite DB file")
+	flag.UintVar(&options.port, "port", 8000, "HTTP server listen port")
 	flag.Parse()
 }
 
 // startServer initialize and start the web server.
 func startServer() {
-	api, err := gobroem.NewAPI(options.db)
+	api, err := SGB.NewAPI(options.db)
 	if err != nil {
-		log.Fatal("can not open db", err)
+		log.Fatal("can not open DB:", err)
 	}
-
 	http.ListenAndServe(
 		fmt.Sprintf("%s:%d", options.host, options.port),
 		api.Handler("/", "/static/"),
